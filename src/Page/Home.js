@@ -48,7 +48,7 @@ export default function Home() {
 
     const handleChange = (event) => {
         const value=  event.target.value.replace(/[^0-9]/gi, '')
-        if(value){
+        if(value||value==''){
             setInput(values => ({
                 ...values, [event.target.name]: value
             }))
@@ -61,32 +61,9 @@ export default function Home() {
             <CustomLoginLayout
                 LeftComponent={
                     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%', flexDirection: 'column', width: '100%' }}>
-                       <p3 className="header">Carry-Arithmetic-Algorithm</p3>
-                        <input
-                            placeholder="Enter Number"
-                            name='firstNumber'
-                            value={input.firstNumber}
-                            onChange={handleChange}
-                            style={{ padding: '0.5rem', margin: '1rem 0rem', width: '80%' }} />
-
-                        <input
-                            placeholder="Enter Number"
-                            name='secondNumber'
-                            value={input.secondNumber}
-                            onChange={handleChange}
-                            style={{ padding: '0.5rem', margin: '1rem 0rem', width: '80%' }} />
-                        <div
-                            style={{ width: '80%' }}
-                            className="button-container">
-                            <button
-                                style={{ width: '100%' }}
-                                className='button-primary' onClick={() => ExecuteCalculation()}>Calculate</button>
-                        </div>
-                    </div>}
-                RightComponent={
-                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
                         <div style={{ height: '40vh', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', minWidth: '40vh', backgroundColour: '#C0C0C0', border: '2px solid #D3D3D3', borderRadius: '8px', padding: '1rem' }}>
-                            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+                       
+                       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
                                 <div className="font-Primary">Remainder:  </div>
                                 <div className="font-Primary">Number 1:  </div>
                                 <div className="font-Primary">Number 2:  </div>
@@ -107,6 +84,34 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
+
+                    </div>}
+                RightComponent={
+                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%',flexDirection: 'column',  }}>
+                          
+                        <p className="header">Carry-Arithmetic-Algorithm</p>
+                        <input
+                            placeholder="Enter Number"
+                            name='firstNumber'
+                            value={input.firstNumber}
+                            onChange={handleChange}
+                            style={{ padding: '0.5rem', margin: '1rem 0rem', width: '75%' }} />
+
+                        <input
+                            placeholder="Enter Number"
+                            name='secondNumber'
+                            value={input.secondNumber}
+                            onChange={handleChange}
+                            style={{ padding: '0.5rem', margin: '1rem 0rem', width: '75%' }} />
+                        <div
+                            style={{ width: '77%' }}
+                            className="button-container">
+                            <button
+                                style={{ width: '100%' }}
+                                className='button-primary' onClick={() => ExecuteCalculation()}>Calculate</button>
+                        </div>
+                          
+                          
                     </div>}
             />
 

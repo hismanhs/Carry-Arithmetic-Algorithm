@@ -16,7 +16,7 @@ export default function CustomLayout({ LeftComponent, RightComponent }) {
     }
     const MobileStyle = {
         // Aside: { display: 'none' },
-        // subContaine: { width: '100%', backgroundColor: '#F5EFE6', height: '100%' }
+        subContaine: { width: '100%', height: '100%' }
 
     }
     const DestopStyle = {
@@ -25,8 +25,8 @@ export default function CustomLayout({ LeftComponent, RightComponent }) {
     }
     return (
         <div style={container}>
-            <div className="left-cotainer" style={size.width < 600 ? MobileStyle.Aside : DestopStyle.Aside}>{LeftComponent}</div>
-            <div className="right-container" style={size.width < 600 ? MobileStyle.subContaine : DestopStyle.subContaine}>{RightComponent}</div>
+            <div className="left-cotainer" style={size.width < 800 ? MobileStyle.Aside : DestopStyle.Aside}>{LeftComponent}</div>
+            <div className="right-container" style={size.width < 800 ? MobileStyle.subContaine : DestopStyle.subContaine}>{RightComponent}</div>
         </div>
     );
 }
