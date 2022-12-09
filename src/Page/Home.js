@@ -10,11 +10,11 @@ export default function Home() {
         remainder: [],
         total: []
     });
-    const [input, setInput] = useState({ firstNumber: '', secondNumber: '' })
+    const [input, setInput] = useState({ firstInteger: '', secondInteger: '' })
 
     const ExecuteCalculation = () => {
-        const int1 = input.firstNumber.toString().split('')
-        const int2 = input.secondNumber.toString().split('')
+        const int1 = input.firstInteger.toString().split('')
+        const int2 = input.secondInteger.toString().split('')
         const Total = []
         const remainder = [0]
         const greatLent = Math.max(int1.length, int2.length)
@@ -65,8 +65,8 @@ export default function Home() {
                        
                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
                                 <div className="font-Primary">Remainder:  </div>
-                                <div className="font-Primary">Number 1:  </div>
-                                <div className="font-Primary">Number 2:  </div>
+                                <div className="font-Primary">Integer 1:  </div>
+                                <div className="font-Primary">Integer 2:  </div>
                                 <div className="font-Primary">Total:  </div>
                             </div>
                             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
@@ -92,15 +92,15 @@ export default function Home() {
                         <p className="header">Carry-Arithmetic-Algorithm</p>
                         <input
                             placeholder="Enter Number"
-                            name='firstNumber'
-                            value={input.firstNumber}
+                            name='firstInteger'
+                            value={input.firstInteger}
                             onChange={handleChange}
                             style={{ padding: '0.5rem', margin: '1rem 0rem', width: '75%' }} />
 
                         <input
                             placeholder="Enter Number"
-                            name='secondNumber'
-                            value={input.secondNumber}
+                            name='secondInteger'
+                            value={input.secondInteger}
                             onChange={handleChange}
                             style={{ padding: '0.5rem', margin: '1rem 0rem', width: '75%' }} />
                         <div
